@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" 
+	width="800" height="450" title="Log" showCloseButton="true" close="close()">
+	<mx:VBox width="100%" height="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+		<mx:HBox width="100%" height="25" verticalAlign="middle">
+			<mx:Spacer width="10"/>
+			<mx:Label text="Level:"/>
+			<mx:ComboBox id="levelSelector" dataProvider="{_logLevels}" width="100"/>
+			<mx:Spacer width="100%"/>
+			<mx:Button id="clearContentButton" label="Clear Log" click="clearLog()"/>
+			<mx:Spacer width="10"/>			
+		</mx:HBox>
+		<mx:TextArea id="logConsole" width="100%" height="100%" 
+			editable="false" wordWrap="false"/>
+	</mx:VBox>
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.logging.*;
+			import mx.managers.PopUpManager;
+					
+			public var isOpen:Boolean = false;
+			
+			public function close():void
+			{
+				PopUpManager.removePopUp(this);
+				isOpen = false;
+			}
+			
+			private function clearLog():void
+			{
+				if(logConsole != null){
+					logConsole.text = "";
+				}
+			}
+			
+			[Bindable]
+			private var _logLevels:ArrayCollection = new ArrayCollection(
+										[{label:"All",   data:LogEventLevel.ALL},
+										 {label:"Debug", data: LogEventLevel.DEBUG},
+										 {label:"Info",  data: LogEventLevel.INFO},
+										 {label:"Warn",  data: LogEventLevel.WARN},
+										 {label:"Error", data: LogEventLevel.ERROR},
+										 {label:"Fatal", data: LogEventLevel.FATAL}]);
+		]]>
+	</mx:Script>
+</mx:TitleWindow>

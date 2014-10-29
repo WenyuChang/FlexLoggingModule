@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1179"
+   name=""
+   committed-date="2010-06-24T08:42:17.234375Z"
+   url="http://neulion.net.cn:8080/svn/metis/flexcommon/trunk/logging"
+   last-author="Ang.Ji"
+   kind="dir"
+   uuid="6227acf3-035e-334b-889c-d57aa75427ff"
+   repos="http://neulion.net.cn:8080/svn/metis"
+   revision="1179"/>
+<entry
+   committed-rev="1170"
+   name=".flexLibProperties"
+   text-time="2010-06-24T09:28:44.676305Z"
+   committed-date="2010-06-24T06:34:52.703125Z"
+   checksum="4e091a6608768bd388d55accc697da32"
+   last-author="Ang.Ji"
+   kind="file"
+   prop-time="2010-06-24T09:28:43.076213Z"/>
+<entry
+   committed-rev="1170"
+   name=".project"
+   text-time="2010-06-24T09:28:44.716307Z"
+   committed-date="2010-06-24T06:34:52.703125Z"
+   checksum="493f06a2932dcddb3eefc554bbd653cf"
+   last-author="Ang.Ji"
+   kind="file"
+   prop-time="2010-06-24T09:28:43.097214Z"/>
+<entry
+   name="src"
+   kind="dir"/>
+<entry
+   name="bin"
+   kind="dir"/>
+<entry
+   committed-rev="1170"
+   name=".actionScriptProperties"
+   text-time="2010-06-24T09:28:44.816313Z"
+   committed-date="2010-06-24T06:34:52.703125Z"
+   checksum="cfa254843237dbb7fc9968c126ffd6fb"
+   last-author="Ang.Ji"
+   kind="file"
+   prop-time="2010-06-24T09:28:44.328285Z"/>
+<entry
+   name=".settings"
+   kind="dir"/>
+</wc-entries>

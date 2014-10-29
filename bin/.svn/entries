@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1172"
+   name=""
+   committed-date="2010-06-24T06:39:23.484375Z"
+   url="http://neulion.net.cn:8080/svn/metis/flexcommon/trunk/logging/bin"
+   last-author="Ang.Ji"
+   kind="dir"
+   uuid="6227acf3-035e-334b-889c-d57aa75427ff"
+   repos="http://neulion.net.cn:8080/svn/metis"
+   revision="1179"/>
+</wc-entries>

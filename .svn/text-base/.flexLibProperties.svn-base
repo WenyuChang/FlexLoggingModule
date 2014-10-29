@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+<includeClasses>
+<classEntry path="com.neulion.logging.LogController"/>
+<classEntry path="com.neulion.logging.LogUtil"/>
+<classEntry path="com.neulion.logging.LogWindow"/>
+<classEntry path="com.neulion.logging.TextAreaLogTarget"/>
+</includeClasses>
+<includeResources/>
+<namespaceManifests/>
+</flexLibProperties>

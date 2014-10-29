@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1170"
+   name=""
+   committed-date="2010-06-24T06:34:52.703125Z"
+   url="http://neulion.net.cn:8080/svn/metis/flexcommon/trunk/logging/.settings"
+   last-author="Ang.Ji"
+   kind="dir"
+   uuid="6227acf3-035e-334b-889c-d57aa75427ff"
+   repos="http://neulion.net.cn:8080/svn/metis"
+   revision="1179"/>
+<entry
+   committed-rev="1170"
+   name="org.eclipse.core.resources.prefs"
+   text-time="2010-06-24T09:28:44.609301Z"
+   committed-date="2010-06-24T06:34:52.703125Z"
+   checksum="3be93cf434c4bde046e3e205a3074a67"
+   last-author="Ang.Ji"
+   kind="file"
+   prop-time="2010-06-24T09:28:44.571299Z"/>
+</wc-entries>

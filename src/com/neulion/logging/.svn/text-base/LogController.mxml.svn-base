@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:UIComponent 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:logging="com.neulion.logging.*"
+	initialize="onInitialize()" 
+	creationComplete="onCreationComplete()" 
+	addedToStage="onAddedToStage()"
+	>
+	<mx:Script>
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			import mx.logging.*;
+			import mx.events.ListEvent;
+			
+			private function onInitialize():void
+			{
+				createLogTarget();
+			}
+			
+			private function onCreationComplete():void
+			{
+				if(this._logWindow == null){
+					createLogWindow();
+				}		
+				
+				this._logTarget.console = this._logWindow.logConsole;		
+			}
+			
+			private function onAddedToStage():void
+			{
+				this.parentApplication.stage.addEventListener(KeyboardEvent.KEY_UP, keyUpEventHandler, false, 5, true);
+			}
+			
+			private function keyUpEventHandler(event:KeyboardEvent):void
+			{
+				if(event.ctrlKey && event.shiftKey && event.charCode == 76){
+						toggleLogWindow();
+				}
+			}
+			
+			private function createLogTarget():void
+			{
+				this._logTarget = new TextAreaLogTarget();
+				this._logTarget.filters = ["*"];
+				this._logTarget.level = LogEventLevel.ALL;
+				this._logTarget.includeCategory = true;
+				this._logTarget.includeDate = true;
+				this._logTarget.includeLevel = true;
+				this._logTarget.includeTime = true;
+				
+				Log.addTarget(this._logTarget);				
+			}
+			
+			private function createLogWindow():void
+			{
+				this._logWindow = new LogWindow();
+				
+				_logWindow.title = this.parentApplication.className + " Log";
+
+				this._logWindow.visible = false;
+				this.parentApplication.addChild(this._logWindow);
+				this.parentApplication.removeChild(this._logWindow);
+				this._logWindow.visible = true;		
+				
+				this._logWindow.levelSelector.addEventListener(ListEvent.CHANGE, onLevelChange);
+			}
+			
+			private function toggleLogWindow():void
+			{
+				if(!this._logWindow.isOpen){
+					PopUpManager.addPopUp(_logWindow, DisplayObject(this.parentApplication));
+					PopUpManager.centerPopUp(_logWindow);
+					this._logWindow.isOpen = true;
+				}else{
+					this._logWindow.close();
+				}
+			}
+			
+			private function onLevelChange(event:ListEvent):void
+			{
+				_logTarget.level = _logWindow.levelSelector.selectedItem.data;
+			}
+			
+			private var _logTarget:TextAreaLogTarget;
+			private var _logWindow:LogWindow;
+		]]>
+	</mx:Script>
+</mx:UIComponent>
